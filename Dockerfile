@@ -16,13 +16,13 @@ RUN apk add --update \
 
 RUN pip install --upgrade pip setuptools
 
-# Install
+# Build euca2ools
 ADD . /root
 
 RUN cd ~/ \
   && python setup.py install
 
-
+# Remove uneeded files
 RUN apk del gcc musl-dev linux-headers \
   && rm -rf ~/* \
   && rm -rf /var/cache/apk/*

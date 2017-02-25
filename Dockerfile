@@ -22,7 +22,7 @@ ADD . /root
 RUN cd ~/ \
   && python setup.py install
 
-# Remove uneeded files
+# Remove unneeded files
 RUN apk del gcc musl-dev linux-headers \
   && rm -rf ~/* \
   && rm -rf /var/cache/apk/*

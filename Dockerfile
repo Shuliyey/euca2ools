@@ -24,6 +24,7 @@ RUN cd ~/ \
 
 
 RUN apk del gcc musl-dev linux-headers \
+  && rm -rf ~/* \
   && rm -rf /var/cache/apk/*
 
 CMD ['ash']
